@@ -1,0 +1,610 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    background: url('image/servicebg.jpeg') no-repeat center center;
+    background-size: cover;
+}
+
+.header-content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 100px;
+    width: 200px;
+    background-image: url('image/TG_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Tahoma', sans-serif; 
+    font-weight: bold;
+    border: 2.5px solid transparent;
+    text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -0.5px 0.5px 0 #000,
+    1px 1px 0 #000;
+    border-radius: 10px;
+    color: #f5f5f5; /* Initial color */
+    background-color: transparent;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    border-color: #2014c1;
+    color: #ffda47; /* Hover color */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.logo-title {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; 
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-title h3{
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; /* Delayed start for the title */
+}
+
+.main {
+    padding: 20px;
+}
+
+/* Services Section */
+.services {
+    padding: 1px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 2px solid #162cb9; /* Greenish border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin: 20px; /* Spacing around the section */
+}
+
+.content-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the text and image */
+}
+
+.text-content {
+    flex: 1;
+    padding: 20px;
+    text-align: justify; /* Justify the paragraph text */
+}
+
+.text-content p {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.6;
+    color: #000000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-image: url('image/diagram.png'); /* Path to the image */
+    background-size: contain; /* Ensure the image fits within the div */
+    background-position: center; /* Center the image within the div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 750px; /* Adjust height as needed */
+    border-radius: 8px; /* Rounded corners for the image container */
+}
+
+
+
+/* IMAGE SLIDESHOW General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Slideshow Container */
+.sensor-slideshow-container {
+    width: 100%; /* Full width of the page */
+    margin: 20px auto;
+    text-align: center;
+    padding: 0px; /* Add some horizontal padding */
+}
+
+/* Box around slideshow with title included */
+.slideshow-box {
+    border-radius: 10px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    background-color: #fff; /* Background color for better contrast */
+    padding: 1px; /* Padding inside the box */
+}
+
+.slideshow-box h3 {
+    font-size: 2em; /* Larger font size for the title */
+    margin-bottom: 20px;
+    color: #333; /* Adjust color if needed */
+    text-align: center;
+}
+
+/* Slides */
+.slides {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px; /* Rounded corners for the container */
+    margin-bottom: 20px;
+}
+
+.slide {
+    flex: 1 0 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+
+.slide img {
+    width: 300px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    object-fit: cover; /* Ensure image covers the area */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect for the image */
+}
+
+.label {
+    font-size: 1.2em; /* Larger font size for labels */
+    font-weight: bold;
+    margin-top: 10px;
+    font-family:Arial, Helvetica, sans-serif
+    color: #333;
+}
+
+/* Navigation Dots */
+.dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #162cb9;
+}
+
+
+/* Key Parameters Section */
+.key-parameters {
+    width: 100%; /* Full width of the page */
+    padding: 15px;
+    background-color: #ffffff; /* Background color for the box */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+}
+
+.key-parameters h3 {
+    font-size: 2em; /* Larger font size for the title */
+    margin-bottom: 20px;
+    color: #333; /* Adjust color if needed */
+    text-align: center;
+}
+
+/* Collapsible Container */
+.collapsible-container {
+    margin-bottom: 20px; /* Spacing between sections */
+}
+
+/* Header Style */
+.collapsible-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f1f1f1; /* Background color for header */
+    padding: 10px; /* Padding inside the header */
+    border-radius: 10px; /* Rounded corners for the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect for the header */
+}
+
+.header-title {
+    font-size: 1.2em; /* Font size for the title */
+    flex: 1; /* Allow the title to take up available space */
+}
+
+.collapsible-toggle {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #162cb9; /* Green color for the arrow */
+    transition: color 0.3s ease;
+}
+
+.collapsible-toggle:hover {
+    color: #3865ed; /* Darker green on hover */
+}
+
+/* Collapsible Content */
+.collapsible-content {
+    display: none;
+    padding: 10px;
+    border-radius: 10px; /* Rounded corners for the content */
+    background-color: #fafafa; /* Background color for the content */
+}
+
+.collapsible-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect for the image */
+    margin-bottom: 10px;
+}
+
+.collapsible-details {
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+.collapsible-details p {
+    margin: 0;
+    font-size: 1em; /* Font size for the details */
+}
+
+.collapsible-details strong {
+    font-weight: bold; /* Bold text for labels */
+}
+
+
+/*about traffic guardian*/
+#about-trafficguardian {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.about-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.left-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box {
+    background-color: #fff;
+    border: 2px solid #162cb9; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.icon {
+    font-size: 30px;
+    margin-right: 15px;
+}
+
+.content h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #160eef;
+}
+
+.content p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.right-side {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px; /* Space between image and boxes */
+}
+
+.right-side img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto; /* Adjust this if the height needs to match the boxes' height precisely */
+    object-fit: cover;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 2; }
+}
+
+/*FAQ*/
+.faq-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.faq {
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 2px solid #162cb9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    overflow: hidden;
+}
+
+.faq-title {
+    background-color: #f4f5f4;
+    color: rgb(9, 9, 9);
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.faq-section h3 {
+    text-align: center;
+    font-size: 2.3em; /* Much larger font size */
+    color: #333; /* Dark color for better readability */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.faq-title h4 {
+    margin: 0;
+    flex: 1;
+}
+
+.faq-title .arrow {
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
+
+.faq-content {
+    display: none;
+    padding: 20px;
+    background-color: white; /* Background color for content */
+    color: #333;
+    font-size: 1em;
+    font-family: 'Roboto', sans-serif;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+}
+
+.faq-content p {
+    margin: 0;
+}
+
+/* Show content when active */
+.faq-content.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Arrow rotation for expanded content */
+.faq-content.show {
+    display: block;
+}
+
+.faq-title .arrow.rotate {
+    transform: rotate(180deg);
+}
+
+
+/* Footer styling to span the full width of the page */
+footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    background-color: #f9f9f9;
+    padding: 1px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Stick to the bottom of the viewport if necessary */
+    background: url('image/footercover.jpg') no-repeat center center;
+}
+
+/* Container for footer content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Adjust social links styling */
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 15px;
+    font-size: 2em; /* Adjust size as needed */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.social-links a:hover {
+    color: #162cb9; /* Change color on hover */
+    transform: scale(1.2); /* Slightly larger on hover */
+}
+
+/* Style for the footer bottom section */
+.footer-bottom {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; /* Prevents full-width block behavior */
+    width: 100%; /* Adjust width automatically based on content */
+    box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .copyright {
+    font-weight: bold;
+}
+
+.footer-bottom a {
+    color: #76e443;
+    text-decoration: none;
+}
+
+.footer-gif {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-gif img {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Scroll Up Arrow Styles */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #162cb9; /* Background color */
+    color: white; /* Arrow color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    background-color: #3865ed; /* Darker background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Arrow Icon */
+.scroll-up i {
+    font-size: 20px;
+}

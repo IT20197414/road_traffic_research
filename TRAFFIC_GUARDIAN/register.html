@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Traffic Guardian</title>
+    <link rel="icon" type="image/png" href="image/icon.png">
+
+    <link rel="stylesheet" href="register.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="registrationForm" onsubmit="return handleSubmit()">
+
+            <h2>User Registration</h2>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" required>
+            </div>
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+                <small id="emailError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+                <small id="passwordError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="reEnterPassword">Re-enter Password</label>
+                <input type="password" id="reEnterPassword" name="reEnterPassword" required>
+                <small id="reEnterPasswordError" class="error"></small>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    
+    <script>
+        function handleSubmit() {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let reEnterPassword = document.getElementById('reEnterPassword').value;
+            let emailError = document.getElementById('emailError');
+            let passwordError = document.getElementById('passwordError');
+            let reEnterPasswordError = document.getElementById('reEnterPasswordError');
+
+            emailError.textContent = '';
+            passwordError.textContent = '';
+            reEnterPasswordError.textContent = '';
+
+            if (!validateEmail(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                return false;
+            }
+
+            if (!validatePassword(password)) {
+                passwordError.textContent = 'Password must be 8-20 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.';
+                return false;
+            }
+
+            if (password !== reEnterPassword) {
+                reEnterPasswordError.textContent = 'Passwords do not match.';
+                return false;
+            }
+
+            alert('Registration successful!');
+            return true; // Allow form submission
+        }
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+
+        function validatePassword(password) {
+            const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            return re.test(password);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    background: url('image/about-us-header.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.header-content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 100px;
+    width: 200px;
+    background-image: url('image/TG_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Tahoma', sans-serif; 
+    font-weight: bold;
+    border: 2.5px solid transparent;
+    text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -0.5px 0.5px 0 #000,
+    1px 1px 0 #000;
+    border-radius: 10px;
+    color: #f5f5f5; /* Initial color */
+    background-color: transparent;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    border-color: #2014c1;
+    color: #ffda47; /* Hover color */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.logo-title {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; 
+}
+
+
+/* Keyframes for slide-in and fade-in effects */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo-title h3{
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; /* Delayed start for the title */
+}
+
+.main {
+    padding: 20px;
+}
+
+/* Services Section */
+.services {
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border: 2px solid #0b0d94; /* Greenish border color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+    margin: 20px; /* Spacing around the section */
+}
+
+.content-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space out the text and image */
+}
+
+.text-content {
+    flex: 1;
+    padding: 2px;
+    text-align: justify; /* Justify the paragraph text */
+}
+
+.text-content p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #000000; /* Dark text color for readability */
+}
+
+/* About Us Section */
+.about-us {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    background: rgba(255, 255, 255, 0.8); /* Slight background for readability */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+    animation-delay: 2s; /* Starts after heading animation */
+}
+
+/* Animation for text content */
+.text-content p,
+.text-content h3,
+.text-content ul {
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+    animation-delay: 2s; /* Starts after the heading animation */
+}
+
+/* Specific delays for different elements within text-content */
+.text-content p {
+    animation-delay: 2s; /* Start fading in after header */
+}
+
+.text-content h3 {
+    animation-delay: 2.5s; /* Start fading in slightly after paragraphs */
+}
+
+.text-content ul {
+    animation-delay: 3s; /* Start fading in after headings */
+}
+
+.content-box {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between; /* Space out the text and image */
+    background-color: #fff; /* Background color for the box */
+    border-radius: 10px; /* Rounded corners for the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    overflow: hidden; /* Ensures content stays within the box's boundaries */
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('image/about-us-left-img.jpg'); /* Path to the image */
+    background-size: cover; /* Ensure the image covers the container */
+    background-position: center; /* Center the image within the div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 1330px; /* Adjust height as needed */
+    border-radius: 8px; /* Rounded corners for the image container */
+    opacity: 0; /* Initially hidden */
+    animation: slideInLeft 2s ease-out forwards; /* Apply slide-in effect */
+    animation-delay: 1s; /* Start animation after the section fade-in */
+}
+
+.text-content {
+    flex: 2; /* Ensure the text content takes more space */
+    padding: 20px;
+    opacity: 0; /* Initially hidden */
+    animation: slideInRight 2s ease-out forwards; /* Apply slide-in effect */
+    animation-delay: 3s; /* Start animation after image animation */
+}
+
+.text-content p {
+    text-align: justify;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.1em; /* Adjust the size as needed */
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.text-content h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #162cb9; /* Green color for headings */
+    font-size: 1.5em; /* Adjust the size as needed */
+    margin-top: 20px;
+}
+
+.text-content ul {
+    list-style: none; /* Remove default bullets */
+    padding-left: 1.5em;
+    position: relative;
+}
+
+.text-content ul li {
+    font-family: 'Open Sans', sans-serif; /* Use a good font family */
+    font-size: 1.1em; /* Adjust the size as needed */
+    margin-bottom: 0.5em;
+    position: relative;
+    padding-left: 1.8em; /* Adjust space for custom icon */
+}
+
+.text-content ul li::before {
+    content: '\f058'; /* Unicode for Font Awesome check-circle icon */
+    font-family: 'Font Awesome 5 Free'; /* Specify Font Awesome */
+    font-weight: 900; /* Ensure the icon appears solid */
+    color: #001562; /* Green color for the icon */
+    font-size: 1.2em; /* Adjust size as needed */
+    position: absolute;
+    left: 0;
+    top: -0.1em; /* Adjust this value to align the icon vertically */
+}
+
+
+/* Footer CSS ALL */
+
+/* Footer styling to span the full width of the page */
+footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    background-color: #f9f9f9;
+    padding: 1px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Stick to the bottom of the viewport if necessary */
+    background: url('image/footercover.jpg') no-repeat center center;
+}
+
+/* Container for footer content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Adjust social links styling */
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 15px;
+    font-size: 2em; /* Adjust size as needed */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.social-links a:hover {
+    color: #162cb9; /* Change color on hover */
+    transform: scale(1.2); /* Slightly larger on hover */
+}
+
+/* Style for the footer bottom section */
+.footer-bottom {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; /* Prevents full-width block behavior */
+    width: 100%; /* Adjust width automatically based on content */
+    box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .copyright {
+    font-weight: bold;
+}
+
+.footer-bottom a {
+    color: #76e443;
+    text-decoration: none;
+}
+
+.footer-gif {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-gif img {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Scroll Up Arrow Styles */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #162cb9; /* Background color */
+    color: white; /* Arrow color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    background-color: #3865ed; /* Darker background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Arrow Icon */
+.scroll-up i {
+    font-size: 20px;
+}

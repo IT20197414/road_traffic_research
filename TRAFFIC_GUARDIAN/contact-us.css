@@ -1,0 +1,462 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 250px; /* Adjust as needed */
+    background: url('image/contact-us-header.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.header-content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 100px;
+    width: 200px;
+    background-image: url('image/TG_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Tahoma', sans-serif; 
+    font-weight: bold;
+    border: 2.5px solid transparent;
+    text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -0.5px 0.5px 0 #000,
+    1px 1px 0 #000;
+    border-radius: 10px;
+    color: #f5f5f5; /* Initial color */
+    background-color: transparent;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    border-color: #2014c1;
+    color: #ffda47; /* Hover color */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.logo-title {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Add some horizontal padding */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; 
+}
+
+
+/* Keyframes for slide-in and fade-in effects */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.logo-title h3{
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+}
+
+.logo-title h3 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; /* Delayed start for the title */
+}
+
+.main {
+    padding: 20px;
+}
+
+/*body content*/
+/* General Styles for the Background and Container */
+.contact-background {
+    background-image: url('image/cntact-us-form.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-image: url('image/cntact-us-form.jpg');
+}
+
+.contact-info,
+.contact-form {
+    width: 48%; /* Adjusted to fit side by side with minimal space */
+    background: #fff;
+    border: 2px solid #162cb9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.contact-info {
+    margin-right: 1%; /* Reduced space between the info box and form box */
+}
+
+.contact-form {
+    margin-left: 1%;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.icon-link {
+    text-decoration: none;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.icon {
+    font-size: 24px; /* Adjust size as needed */
+    color: #061381; /* Default green color */
+    padding: 10px; /* Space inside the icon container */
+    border-radius: 50%; /* Round shape */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover Effect for Icons */
+.icon-link:hover .icon {
+    background-color: #4b58cc; /* Green background color on hover */
+    color: #fff; /* White color for the icon on hover */
+}
+
+.info-item:hover .icon {
+    color: #3920c7; /* Icon color on hover */
+}
+
+.details h3 {
+    font-size: 18px;
+    margin: 0 0 5px;
+}
+
+.details p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.details p a {
+    color: #02076c;
+    text-decoration: none;
+}
+
+.details p a:hover {
+    text-decoration: underline;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: calc(100% - 20px); /* Adjusted width for padding */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 15px; /* Consistent spacing between fields */
+}
+
+.contact-form textarea {
+    height: 120px; /* Fixed height to accommodate approximately 4 lines */
+    resize: none; /* Prevent resizing */
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-form button {
+    background-color: #162cb9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.contact-form button:hover {
+    background-color: #3437e3;
+}
+
+/* Keyframes for fade-in animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Contact Info Box */
+.contact-info {
+    width: 48%; /* Adjusted to fit side by side with minimal space */
+    background: #fff;
+    border: 2px solid #162cb9; /* Greenish border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: fadeInLeft 1s ease-out; /* Apply fade-in effect from the left */
+    opacity: 0; /* Initially hidden */
+    animation-fill-mode: forwards; /* Maintain the end state of the animation */
+    animation-delay: 1s; /* Delay for contact info */
+}
+
+/* Contact Form Box */
+.contact-form {
+    width: 48%; 
+    background: #fff;
+    border: 2px solid #162cb9; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    animation: fadeInRight 1s ease-out; /* Apply fade-in effect from the right */
+    opacity: 0; /* Initially hidden */
+    animation-fill-mode: forwards; /* Maintain the end state of the animation */
+    animation-delay: 1s; /* Delay for contact form */
+}
+
+/* Ensure animation is triggered on page load */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+/* Footer CSS ALL */
+
+/* Footer styling to span the full width of the page */
+footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    background-color: #f9f9f9;
+    padding: 1px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Stick to the bottom of the viewport if necessary */
+    background: url('image/footercover.jpg') no-repeat center center;
+}
+
+/* Container for footer content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Adjust social links styling */
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 15px;
+    font-size: 2em; /* Adjust size as needed */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.social-links a:hover {
+    color: #162cb9; /* Change color on hover */
+    transform: scale(1.2); /* Slightly larger on hover */
+}
+
+/* Style for the footer bottom section */
+.footer-bottom {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; /* Prevents full-width block behavior */
+    width: 100%; /* Adjust width automatically based on content */
+    box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .copyright {
+    font-weight: bold;
+}
+
+.footer-bottom a {
+    color: #76e443;
+    text-decoration: none;
+}
+
+.footer-gif {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-gif img {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Scroll Up Arrow Styles */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #162cb9; /* Background color */
+    color: white; /* Arrow color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    background-color: #3865ed; /* Darker background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Arrow Icon */
+.scroll-up i {
+    font-size: 20px;
+}

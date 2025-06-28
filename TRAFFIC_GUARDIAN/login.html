@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Traffic Guardian</title>
+    <link rel="icon" type="image/png" href="image/icon.png">
+    
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="container">
+        <form id="loginForm" onsubmit="return handleLogin()">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" required>
+                <small id="userNameError" class="error"></small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+                <small id="passwordError" class="error"></small>
+            </div>
+            <button type="submit">Login</button>
+            <p class="create-account">
+                Don't have an account? <a href="register.html">Create one</a>
+            </p>
+        </form>
+    </div>
+    
+    <script>
+        // Simulated registered users data
+        const registeredUsers = [
+            { username: 'user1', password: 'Password1!' },
+            { username: 'Gihan', password: 'Password2@' },
+        ];
+
+        function handleLogin() {
+            let userName = document.getElementById('userName').value;
+            let password = document.getElementById('password').value;
+            let userNameError = document.getElementById('userNameError');
+            let passwordError = document.getElementById('passwordError');
+
+            userNameError.textContent = '';
+            passwordError.textContent = '';
+
+            // Validate username
+            let user = registeredUsers.find(user => user.username === userName);
+
+            if (!user) {
+                userNameError.textContent = 'Username not registered.';
+                return false;
+            }
+
+            // Validate password
+            if (!validatePassword(password)) {
+                passwordError.textContent = 'Password must be 8-20 characters long and include at least one uppercase letter, one lowercase letter, one number, and one special character.';
+                return false;
+            }
+
+            if (user.password !== password) {
+                passwordError.textContent = 'Incorrect password.';
+                return false;
+            }
+
+            alert('Login Success, Welcome ' + userName);
+            window.location.href = 'home.html'; // Navigate to MAIN DASHOARD
+            return false; // Prevent actual form submission
+        }
+
+        function validatePassword(password) {
+            const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+            return re.test(password);
+        }
+    </script>
+</body>
+</html>

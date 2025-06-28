@@ -1,0 +1,524 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 400px; /* Adjust as needed */
+    background: url('image/intro_cover.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.header-content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo {
+    height: 100px;
+    width: 200px;
+    background-image: url('image/TG_LOGO.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 50%; /* Makes the logo rounded */
+    overflow: hidden; /* Hides any overflow beyond the border-radius */
+}
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-link:hover {
+    transform: scale(1.1); /* Slightly increase size on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow on hover */
+}
+
+.nav-links {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-button {
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    font-family: 'Tahoma', sans-serif; 
+    font-weight: bold;
+    border: 2.5px solid transparent;
+    text-shadow: 
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -0.5px 0.5px 0 #000,
+    1px 1px 0 #000;
+    border-radius: 10px;
+    color: #f5f5f5; /* Initial color */
+    background-color: transparent;
+    transition: border-color 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    border-color: #2014c1;
+    color: #ffda47; /* Hover color */
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.logo-title {
+    position: absolute;
+    top: 50%; /* Adjust based on your design */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.logo-title h1 {
+    font-size: 5em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 1000;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; 
+}
+
+.logo-title p {
+    font-size: 1.5em;
+    font-family: Helvetica, sans-serif;
+    font-weight: 600;
+    margin: 10px 0;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Slight upward movement */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-title h1,
+.logo-title p {
+    position: relative;
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 2s ease-in-out forwards; /* Apply fade-in effect */
+}
+
+.logo-title h1 {
+    font-size: 4em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    margin: 0;
+    text-shadow: 
+        -2.5px -2.5px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 0.5s; /* Delayed start for the title */
+}
+
+.logo-title p {
+    font-size: 1.5em;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px 0;
+    text-shadow: 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+    animation-delay: 1s; /* Delayed start for the subtitle */
+}
+
+
+.get-started-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    color: rgba(6, 6, 6, 0.847);
+    background-color: #9ced77;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.get-started-button:hover {
+    background-color: #65c637;
+}
+
+
+.main {
+    padding: 20px;
+}
+
+/* General styles for the sections */
+.intro, .services-features, .key-technologies {
+    position: relative;
+    padding: 20px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
+}
+
+/* Background image and text visibility for the intro section */
+.intro {
+    background: url('image/intro1.jpg') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7); /* Light white overlay */
+    backdrop-filter: blur(5px); /* Adjust blur level */
+    z-index: 1; /* Ensure overlay is behind text */
+}
+
+.intro p, .intro ul {
+    position: relative;
+    z-index: 2; /* Ensure text is above overlay */
+    font-family: 'Open Sans', sans-serif; /* Adjust font family as needed */
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+/* Improve list styling for the intro section */
+.intro ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+/* Specific styling for services-features section */
+.services-features {
+    background-color: #ffffff;
+}
+
+/* Key Technologies Section Styles */
+.key-technologies {
+    position: relative;
+    padding: 20px;
+    color: #333;
+    border-radius: 2px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0px;
+    overflow: hidden; /* Ensure no overflow from pseudo-element */
+    background-color: #ffffff; /* Ensure text is readable */
+    background: url('image/key1.jpg') no-repeat center center;
+}
+.key-technologies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(8px); /* Adjust the blur level as needed */
+    z-index: -1;
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
+.key-technologies h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move down slightly */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    color: white; /* Set text color to white */
+    text-shadow: 
+        1px 1px 0 #000, /* Right and bottom shadow */
+       -1px -1px 0 #000, /* Left and top shadow */
+        1px -1px 0 #000, /* Right and top shadow */
+       -1px 1px 0 #000; /* Left and bottom shadow */
+}
+
+.key-technologies h2.in-view {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* Technology Boxes Styles */
+.tech-box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1%; /* Adjust spacing between boxes as needed */
+}
+
+.tech-box {
+    flex: 1; /* Distribute space evenly */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    text-align: justify;
+}
+
+
+.key-technologies::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(8px);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.key-technologies h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Use a good font family */
+    font-weight: 600; /* Slightly bold */
+    opacity: 0; /* Initially hidden */
+    transform: translateY(20px); /* Move down slightly */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.key-technologies h2.in-view {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+
+/* Technology Boxes Styles */
+.tech-box-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1%; /* Adjust spacing between boxes as needed */
+}
+
+.tech-box {
+    flex: 1; /* Distribute space evenly */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+    text-align: justify;
+}
+
+.tech-box:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 2px solid #162cb9; /* Greenish border on hover */
+}
+
+.tech-box h3 {
+    text-align: center;
+    font-size: 1.5em;
+    margin-top: 0;
+}
+
+/* General section styles */
+section {
+    position: relative;
+    padding: 20px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+/* Services Section Specific Styles */
+#services {
+    position: relative;
+    padding: 20px;
+    color: #333;
+    background-color: #ffffff; /* Ensure text is readable */
+    background: url('image/serbg.jpg') no-repeat center center;
+}
+#services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    filter: blur(8px); /* Adjust the blur level as needed */
+    z-index: -1;
+    opacity: 0.5; /* Adjust the opacity as needed */
+}
+
+#services h2 {
+    font-size: 2.5em; /* Adjust as needed */
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Use a good font family */
+    font-weight: 600; /* Slightly bold */
+    color: white; /* Set text color to white */
+    text-shadow: 
+        1px 1px 0 #000, /* Right and bottom shadow */
+       -1px -1px 0 #000, /* Left and top shadow */
+        1px -1px 0 #000, /* Right and top shadow */
+       -1px 1px 0 #000; /* Left and bottom shadow */
+}
+
+#services.in-view h2 {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+}
+
+#services ul {
+    list-style: disc;
+    margin-left: 20px;
+    font-family: 'Open Sans', sans-serif; /* Use a good font family */
+    font-size: 1.2em; /* Adjust font size as needed */
+    line-height: 1.6em; /* Adjust line spacing as needed */
+}
+
+#services li {
+    margin-bottom: 10px; /* Add spacing between list items */
+}
+
+
+
+/* Footer styling to span the full width of the page */
+footer {
+    width: 100%; /* Ensure the footer spans the full width */
+    background-color: #f9f9f9;
+    padding: 1px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
+    margin: 0; /* Remove default margin */
+    position: relative; /* Ensure proper positioning */
+    bottom: 0; /* Stick to the bottom of the viewport if necessary */
+    background: url('image/footercover.jpg') no-repeat center center;
+}
+
+/* Container for footer content */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Adjust social links styling */
+.social-links {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    color: #333;
+    margin: 0 15px;
+    font-size: 2em; /* Adjust size as needed */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.social-links a:hover {
+    color: #162cb9; /* Change color on hover */
+    transform: scale(1.2); /* Slightly larger on hover */
+}
+
+/* Style for the footer bottom section */
+.footer-bottom {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+    display: inline-block; /* Prevents full-width block behavior */
+    width: 100%; /* Adjust width automatically based on content */
+    box-sizing: border-box; /* Include padding and border in element's width */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom .copyright {
+    font-weight: bold;
+}
+
+.footer-bottom a {
+    color: #76e443;
+    text-decoration: none;
+}
+
+.footer-gif {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.footer-gif img {
+    width: 200px;
+    height: 200px;
+}
+
+
+/* Scroll Up Arrow Styles */
+.scroll-up {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #162cb9; /* Background color */
+    color: white; /* Arrow color */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 22px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-up:hover {
+    background-color: #3865ed; /* Darker background on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Arrow Icon */
+.scroll-up i {
+    font-size: 20px;
+}
